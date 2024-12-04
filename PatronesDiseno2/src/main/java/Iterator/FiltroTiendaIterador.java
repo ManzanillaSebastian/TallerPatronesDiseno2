@@ -8,14 +8,16 @@ import java.util.List;
 
 /**
  *
- * @author CltControl
+ * @author sebsm
  */
-public class DisponiblesIterador extends Iterador{
+public class FiltroTiendaIterador extends Iterador{
+    private String tienda;
     
-    public DisponiblesIterador(List<Producto> c){
+    public FiltroTiendaIterador(List<Producto> c, String t){
         super(c);
-    } 
-            
+        tienda = t;
+    }
+
     @Override
     public Producto getNext() {
         return catalogo.get(indice++);
@@ -26,11 +28,10 @@ public class DisponiblesIterador extends Iterador{
         if (catalogo.size() <= (indice + 1)) return false;
         
         while (indice < catalogo.size()){
-            if(catalogo.get(indice).getEstado().equals("Disponible"))return true;
+            if(catalogo.get(indice).getTiendas().contains(tienda))return true;
             indice++;
         }
         
         return false;
     }
-    
 }

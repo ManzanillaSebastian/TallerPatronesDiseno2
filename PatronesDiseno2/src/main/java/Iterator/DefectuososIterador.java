@@ -10,9 +10,9 @@ import java.util.List;
  *
  * @author CltControl
  */
-public class DisponiblesIterador extends Iterador{
+public class DefectuososIterador extends Iterador{
     
-    public DisponiblesIterador(List<Producto> c){
+    public DefectuososIterador(List<Producto> c){
         super(c);
     } 
             
@@ -26,7 +26,7 @@ public class DisponiblesIterador extends Iterador{
         if (catalogo.size() <= (indice + 1)) return false;
         
         while (indice < catalogo.size()){
-            if(catalogo.get(indice).getEstado().equals("Disponible"))return true;
+            if(catalogo.get(indice).getEstado().equals("Defectuoso"))return true;
             indice++;
         }
         

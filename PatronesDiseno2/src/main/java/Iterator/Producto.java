@@ -33,4 +33,14 @@ public class Producto {
     public String getEstado(){
         return estado;
     }
+    
+    @Override
+    public String toString(){
+        String texto = "Nombre: " + nombre;
+        texto += " | Estado: " + estado;
+        texto += " | Disponible en: - ";
+        for(String tienda : tiendas) texto += tienda + " - ";
+        
+        return texto;
+    }
 }

@@ -4,11 +4,21 @@
  */
 package Iterator;
 
+import java.util.List;
+
 /**
  *
  * @author CltControl
  */
-public interface Iterador {
-    public Producto getNext();
-    public boolean hasNext();
+public abstract class Iterador {
+    protected List<Producto> catalogo;
+    protected int indice = 0;
+    
+    public Iterador(List<Producto> c){
+        catalogo = c;
+    }
+    
+    public abstract Producto getNext();
+    public abstract boolean hasNext();
+  
 }

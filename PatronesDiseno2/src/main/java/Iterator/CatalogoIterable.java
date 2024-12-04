@@ -10,7 +10,7 @@ package Iterator;
  */
 public interface CatalogoIterable {
     public Iterador getDisponiblesIterador();
-    public Iterador getFiltroTiendaIterador();
+    public Iterador getFiltroTiendaIterador(String tienda);
     public Iterador getEnReparacionIterador();
     public Iterador getDefectuososIterador();
 }
