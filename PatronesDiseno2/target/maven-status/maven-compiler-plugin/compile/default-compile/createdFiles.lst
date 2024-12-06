@@ -1,0 +1,6 @@
+ChainOfResponsibility\Handler.class
+ChainOfResponsibility\UserSupportAssistant.class
+ChainOfResponsibility\Request.class
+ChainOfResponsibility\StoreManager.class
+ChainOfResponsibility\TechnicalDepartmentMember.class
+ChainOfResponsibility\InventoryManager.class
