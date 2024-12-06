@@ -8,21 +8,15 @@ package ChainOfResponsibility;
  *
  * @author jarec
  */
-public class UserSupportAssistant implements Handler {
-        private Handler nextHandler;
+public class UserSupportAssistant extends BaseHandler {
+ @Override
     public void handleRequest(Request request) {
         System.out.println("User Support Assistant: Verificando si el producto esta en garantia...");
-        // Simulación de validación
         boolean inWarranty = true; // Supongamos que el producto está en garantía
-        if (inWarranty && nextHandler != null) {
-            nextHandler.handleRequest(request);
-        } else if (!inWarranty) {
-            System.out.println("El producto no está en garantía. No se puede procesar la solicitud.");
+        if (inWarranty) {
+            super.handleRequest(request);
+        } else {
+            System.out.println("El producto no esta en garantía. No se puede procesar la solicitud.");
         }
-    }
-
-    @Override
-    public void setNextHandler(Handler nextHandler) {
-        this.nextHandler = nextHandler;
     }
 }
